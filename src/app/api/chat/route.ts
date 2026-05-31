@@ -1,14 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import { streamText } from "ai";
-import { auth } from "@clerk/nextjs/server";
 
 export async function POST(req: Request) {
-  const { userId } = await auth();
-
-  if (!userId) {
-    return new Response("Unauthorized", { status: 401 });
-  }
-
   if (!process.env.OPENAI_API_KEY) {
     return new Response(
       JSON.stringify({
