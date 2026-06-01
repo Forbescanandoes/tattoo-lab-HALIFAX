@@ -435,8 +435,8 @@ function HomePricing() {
         </div>
         <p className="tl-p" style={{ marginTop: 28, maxWidth: 720, color: "var(--tl-fg-dim)", fontSize: 14 }}>
           Each artist sets their own hourly rate based on style, speed, and detail.
-          Final price depends on complexity, placement, and the artist's expertise —
-          you'll know what you're paying before your session begins.
+          Final price depends on complexity, placement, and the artist&apos;s expertise —
+          you&apos;ll know what you&apos;re paying before your session begins.
         </p>
       </div>
     </section>
