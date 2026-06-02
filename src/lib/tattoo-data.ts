@@ -37,7 +37,7 @@ export const ARTISTS: Artist[] = [
     minHours: 1,
     minCharge: 140,
     status: "ACCEPTING BOOKINGS",
-    bio: "Single-needle linework, geometric scaffolds, and the kind of micro-script that only reads clean at a hand's distance. Ornamental motifs pulled tight against the skin's natural lines.",
+    bio: "Single needle linework, geometric scaffolds, and the kind of micro script that only reads clean at a hand's distance. Ornamental motifs pulled tight against the skin's natural lines.",
     works: [
       { title: "FIDUCIAL · 03", size: '4" × 4"', hours: 4 },
       { title: "ORNAMENT BAND", size: "forearm", hours: 6 },
@@ -58,7 +58,7 @@ export const ARTISTS: Artist[] = [
     minHours: 2,
     minCharge: 360,
     status: "BY CONSULT",
-    bio: "Twelve years of stipple, washes, and architectural realism. Specialises in big-scale anatomical studies. Books out two months ahead; consults required.",
+    bio: "Twelve years of stipple, washes, and architectural realism. Specialises in large scale anatomical studies. Books out two months ahead; consults required.",
     works: [
       { title: "ATLAS · UPPER ARM", size: "half-sleeve", hours: 14 },
       { title: "MOTH STUDY", size: "thigh", hours: 9 },
@@ -79,7 +79,7 @@ export const ARTISTS: Artist[] = [
     minHours: 1,
     minCharge: 150,
     status: "ACCEPTING BOOKINGS",
-    bio: "American traditional, refracted. Bold lines, saturated fills, but a palette that's been gently moved off-axis — burnt iodine, oxidised green, ink-black.",
+    bio: "American traditional, refracted. Bold lines, saturated fills, but a palette that's been gently moved off axis — burnt iodine, oxidised green, ink black.",
     works: [
       { title: "DAGGER · CLASSIC", size: '5" × 2"', hours: 3 },
       { title: "ROSE · IODINE", size: "forearm", hours: 4 },
@@ -166,11 +166,11 @@ export const FAQ_DATA: FaqCategory[] = [
     items: [
       {
         q: "How do I book?",
-        a: "Submit a brief on the Book page. We reply within 48 hours with a quote, session length, and an artist match if you didn't pick one. A small non-refundable deposit secures the slot and is applied to your final balance.",
+        a: "Submit a brief on the Book page. We reply within 48 hours with a quote, session length, and an artist match if you didn't pick one. A small nonrefundable deposit secures the slot and is applied to your final balance.",
       },
       {
-        q: "Do you take walk-ins?",
-        a: "Walk-ins are accepted Saturday afternoons, subject to chair availability. First come, first inked. Anything custom or larger than a small piece needs a consult first.",
+        q: "Do you take walk ins?",
+        a: "Walk ins are accepted Saturday afternoons, subject to chair availability. First come, first inked. Anything custom or larger than a small piece needs a consult first.",
       },
       {
         q: "What if I'm under 18?",
@@ -191,7 +191,7 @@ export const FAQ_DATA: FaqCategory[] = [
       },
       {
         q: "Should I eat beforehand?",
-        a: "Yes. A real meal, two hours before. Bring water and a snack for breaks. Don't show up hung-over — we'll reschedule.",
+        a: "Yes. A real meal, two hours before. Bring water and a snack for breaks. Don't show up hung over — we'll reschedule.",
       },
     ],
   },
@@ -200,14 +200,14 @@ export const FAQ_DATA: FaqCategory[] = [
     items: [
       {
         q: "How do I heal it?",
-        a: "Full aftercare sheet is emailed after your session and a printed copy goes home with your aftercare kit. Two weeks of fragrance-free moisturiser, no soaking, no direct sun, no gym for five days.",
+        a: "Full aftercare sheet is emailed after your session and a printed copy goes home with your aftercare kit. Two weeks of fragrance free moisturiser, no soaking, no direct sun, no gym for five days.",
       },
       {
-        q: "Do you do touch-ups?",
-        a: "Free touch-up within 6 months on small and medium pieces, and within 1 year on large work — on the original tattoo. Beyond that, your artist's hourly rate applies with a one-hour minimum.",
+        q: "Do you do touch ups?",
+        a: "Free touch up within 6 months on small and medium pieces, and within 1 year on large work — on the original tattoo. Beyond that, your artist's hourly rate applies with a one hour minimum.",
       },
       {
-        q: "What about cover-ups or rework?",
+        q: "What about cover ups or rework?",
         a: "We do them. Bring photos of the existing piece, in good light, when you submit your brief. Some pieces are easier covered than others; we'll be honest.",
       },
     ],
