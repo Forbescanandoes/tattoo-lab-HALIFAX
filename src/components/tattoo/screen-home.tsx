@@ -135,10 +135,9 @@ function HomeHero() {
         <span>STUDIO OPEN · BOOKING NOW</span>
       </div>
 
-      <div className="tl-page tl-grid-hero" style={{
+      <div className="tl-page tl-grid-hero tl-hero-inner" style={{
         position: "relative",
         zIndex: 2,
-        paddingTop: 140,
         paddingBottom: 80,
       }}>
         <div>
@@ -156,8 +155,7 @@ function HomeHero() {
           </h1>
 
           <p className="tl-lede" style={{ marginTop: 28, maxWidth: 520 }}>
-            A collaboration between your vision and our artistry. Transparent
-            pricing, fair hours, no hidden fees.
+            We treat the work as evidence and the story behind it as the brief.
           </p>
 
           <div style={{ marginTop: 28, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
@@ -193,22 +191,6 @@ function HomeHero() {
         </RegisterFrame>
       </div>
 
-      <div className="tl-hero-watermark" style={{
-        position: "absolute",
-        bottom: -16, left: 0, right: 0,
-        textAlign: "center",
-        fontFamily: "var(--tl-font-display)",
-        fontWeight: 900,
-        fontSize: "clamp(72px, 12vw, 180px)",
-        lineHeight: 0.85,
-        color: "var(--tl-ink-800)",
-        textTransform: "uppercase",
-        letterSpacing: "-0.02em",
-        pointerEvents: "none",
-        zIndex: 1,
-      }}>
-        TATTOO LAB
-      </div>
     </section>
   );
 }

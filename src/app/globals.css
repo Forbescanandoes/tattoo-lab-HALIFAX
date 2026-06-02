@@ -363,6 +363,7 @@
 .tl-grid-works-sub  { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .tl-section-head    { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
 .tl-hero-meta       { position: absolute; top: 84px; left: 48px; right: 48px; display: flex; justify-content: space-between; gap: 16px; }
+.tl-hero-inner      { padding-top: 140px; }
 .tl-hero-watermark  { white-space: nowrap; }
 
 @media (max-width: 960px) {
@@ -382,6 +383,7 @@
   .tl-grid-footer { grid-template-columns: 1fr 1fr; gap: 32px; }
   .tl-section-head { flex-direction: column; align-items: flex-start; }
   .tl-hero-meta { display: none; }
+  .tl-hero-inner { padding-top: 24px; }
   .tl-hero-watermark { white-space: normal; word-break: break-word; }
 }
 
@@ -424,13 +426,14 @@
 .tl-nav-toggle {
   display: none;
   background: transparent;
-  border: 1px solid var(--tl-line);
+  border: 0;
   color: var(--tl-fg);
-  padding: 8px 10px;
+  padding: 8px 4px;
   cursor: pointer;
   font-family: var(--tl-font-mono);
-  font-size: 16px;
+  font-size: 32px;
   line-height: 1;
+  font-weight: 700;
 }
 .tl-nav-mobile {
   display: none;
@@ -495,6 +498,42 @@
   border-top: 1px solid var(--tl-line);
   padding: 64px 48px 40px;
   margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.tl-footer-inner {
+  position: relative;
+  z-index: 1;
+}
+.tl-footer-wordmark {
+  position: absolute;
+  top: -0.12em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--tl-font-display);
+  font-weight: 900;
+  font-size: clamp(56px, 14.5vw, 220px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  display: flex;
+  gap: 0.28em;
+  align-items: baseline;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 240, 232, 0.18) 0%,
+    rgba(245, 240, 232, 0.26) 40%,
+    rgba(245, 240, 232, 0.08) 75%,
+    rgba(10, 9, 8, 0) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 .tl-footer-bottom {
   display: flex;
@@ -514,4 +553,15 @@
 /* Hero watermark sizing on mobile */
 @media (max-width: 720px) {
   .tl-h1 { font-size: clamp(48px, 12vw, 96px) !important; }
+  .tl-footer-wordmark {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    font-size: 22vw;
+    line-height: 0.88;
+    top: 0.12em;
+  }
+  .tl-footer-wordmark span {
+    display: block;
+  }
 }

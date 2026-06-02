@@ -188,7 +188,11 @@ function FooterCol({
 export function Footer() {
   return (
     <footer className="tl-footer">
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+      <div className="tl-footer-wordmark" aria-hidden>
+        <span>TATTOO</span>
+        <span>LAB</span>
+      </div>
+      <div className="tl-footer-inner" style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div className="tl-grid-footer">
           <div>
             <BrandMark size={40} />
