@@ -30,10 +30,11 @@ export function TopNav() {
   }, []);
 
   const links = [
-    { href: "/",        label: "WORK" },
-    { href: "/artists", label: "ARTISTS" },
-    { href: "/book",    label: "BOOK" },
-    { href: "/faq",     label: "FAQ" },
+    { href: "/",         label: "WORK" },
+    { href: "/artists",  label: "ARTISTS" },
+    { href: "/book",     label: "BOOK" },
+    { href: "/careers",  label: "CAREERS" },
+    { href: "/faq",      label: "FAQ" },
   ];
 
   const isActive = (href: string) => {
@@ -216,8 +217,8 @@ export function Footer() {
           />
           <FooterCol
             title="VISIT"
-            items={["WORK", "ARTISTS", "BOOK A SESSION", "FAQ"]}
-            hrefs={["/", "/artists", "/book", "/faq"]}
+            items={["WORK", "ARTISTS", "BOOK A SESSION", "CAREERS", "FAQ"]}
+            hrefs={["/", "/artists", "/book", "/careers", "/faq"]}
           />
           <FooterCol
             title="CONTACT"

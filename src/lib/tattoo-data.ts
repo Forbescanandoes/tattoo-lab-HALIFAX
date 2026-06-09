@@ -37,7 +37,7 @@ export const ARTISTS: Artist[] = [
     minHours: 1,
     minCharge: 140,
     status: "ACCEPTING BOOKINGS",
-    bio: "Single needle linework, geometric scaffolds, and the kind of micro script that only reads clean at a hand's distance. Ornamental motifs pulled tight against the skin's natural lines.",
+    bio: "Adrienne's art lives somewhere between calm and chaos: elegant linework meets bold imagination. She'll quietly blow your mind with a delicate floral piece or an intricate custom design. Coffee, cats, and clean lines keep her inspired.",
     works: [
       { title: "FIDUCIAL · 03", size: '4" × 4"', hours: 4 },
       { title: "ORNAMENT BAND", size: "forearm", hours: 6 },
@@ -58,7 +58,7 @@ export const ARTISTS: Artist[] = [
     minHours: 2,
     minCharge: 360,
     status: "BY CONSULT",
-    bio: "Twelve years of stipple, washes, and architectural realism. Specialises in large scale anatomical studies. Books out two months ahead; consults required.",
+    bio: "Prerna brings sparkle and precision to Tattoo Lab Halifax. Whether it's your first piercing or your tenth, her steady hands and good vibes make the experience easy. A pro at symmetry, jewelry styling, and calming nervous first timers.",
     works: [
       { title: "ATLAS · UPPER ARM", size: "half-sleeve", hours: 14 },
       { title: "MOTH STUDY", size: "thigh", hours: 9 },
@@ -79,7 +79,7 @@ export const ARTISTS: Artist[] = [
     minHours: 1,
     minCharge: 150,
     status: "ACCEPTING BOOKINGS",
-    bio: "American traditional, refracted. Bold lines, saturated fills, but a palette that's been gently moved off axis — burnt iodine, oxidised green, ink black.",
+    bio: "The creative force behind Tattoo Lab Halifax, equal parts artist and perfectionist. Known for turning wild ideas into precise masterpieces, he mixes realism with soul in every tattoo. When he's not tattooing, he's probably sketching his next big concept or geeking out over tattoo machines.",
     works: [
       { title: "DAGGER · CLASSIC", size: '5" × 2"', hours: 3 },
       { title: "ROSE · IODINE", size: "forearm", hours: 4 },

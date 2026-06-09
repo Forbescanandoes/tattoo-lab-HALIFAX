@@ -146,10 +146,12 @@ interface PhotoSlabProps {
   label?: string;
   seed?: number;
   accent?: boolean;
+  image?: string;
+  imageAlt?: string;
   children?: React.ReactNode;
 }
 
-export function PhotoSlab({ height = 240, label, seed = 0, accent = false, children }: PhotoSlabProps) {
+export function PhotoSlab({ height = 240, label, seed = 0, accent = false, image, imageAlt, children }: PhotoSlabProps) {
   const shapes = [
     "M30,20 Q90,5 150,40 T260,50 L280,180 Q200,150 130,170 T20,140 Z",
     "M40,30 Q120,10 180,60 T280,40 L260,200 Q170,170 90,180 T30,150 Z",
@@ -167,23 +169,39 @@ export function PhotoSlab({ height = 240, label, seed = 0, accent = false, child
   const path = shapes[seed % shapes.length];
 
   return (
-    <div className="tl-photo tl-grain" style={{ height, position: "relative", width: "100%" }}>
-      <svg
-        viewBox="0 0 300 220"
-        preserveAspectRatio="xMidYMid slice"
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-      >
-        <defs>
-          <pattern id={`dots${seed}`} width="4" height="4" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="0.6" fill={accent ? "#C8102E" : "#3B342D"} />
-          </pattern>
-        </defs>
-        <rect width="300" height="220" fill={accent ? "#1A0608" : "#0A0908"} />
-        <path d={path} fill={`url(#dots${seed})`} opacity="0.95" />
-        <path d={path} fill="none" stroke={accent ? "#E84A5F" : "#5C5045"} strokeWidth="1.2" opacity="0.8" />
-        <line x1="0" y1="110" x2="300" y2="110" stroke={accent ? "#C8102E" : "#3B342D"} strokeWidth="0.5" opacity="0.5" />
-        <line x1="150" y1="0" x2="150" y2="220" stroke={accent ? "#C8102E" : "#3B342D"} strokeWidth="0.5" opacity="0.5" />
-      </svg>
+    <div className="tl-photo tl-grain" style={{ height, position: "relative", width: "100%", overflow: "hidden" }}>
+      {image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={image}
+          alt={imageAlt ?? label ?? ""}
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
+        />
+      ) : (
+        <svg
+          viewBox="0 0 300 220"
+          preserveAspectRatio="xMidYMid slice"
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
+        >
+          <defs>
+            <pattern id={`dots${seed}`} width="4" height="4" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="0.6" fill={accent ? "#C8102E" : "#3B342D"} />
+            </pattern>
+          </defs>
+          <rect width="300" height="220" fill={accent ? "#1A0608" : "#0A0908"} />
+          <path d={path} fill={`url(#dots${seed})`} opacity="0.95" />
+          <path d={path} fill="none" stroke={accent ? "#E84A5F" : "#5C5045"} strokeWidth="1.2" opacity="0.8" />
+          <line x1="0" y1="110" x2="300" y2="110" stroke={accent ? "#C8102E" : "#3B342D"} strokeWidth="0.5" opacity="0.5" />
+          <line x1="150" y1="0" x2="150" y2="220" stroke={accent ? "#C8102E" : "#3B342D"} strokeWidth="0.5" opacity="0.5" />
+        </svg>
+      )}
       {label && <div className="tl-photo-tag">{label}</div>}
       {children}
     </div>

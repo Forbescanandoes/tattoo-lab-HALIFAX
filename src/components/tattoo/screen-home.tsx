@@ -155,7 +155,7 @@ function HomeHero() {
           </h1>
 
           <p className="tl-lede" style={{ marginTop: 28, maxWidth: 520 }}>
-            We treat the work as evidence and the story behind it as the brief.
+            Halifax&apos;s most trusted tattoo and piercing studio, known for creating premium quality custom tattoos, Japanese, Anime, fine line art, portrait tattoos and more.
           </p>
 
           <div style={{ marginTop: 28, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
@@ -169,10 +169,16 @@ function HomeHero() {
         </div>
 
         <RegisterFrame style={{ padding: 14 }}>
-          <PhotoSlab height={420} label="FIG.04 · HEALED LINEWORK · 12 WEEKS POST" seed={1}>
+          <PhotoSlab
+            height={420}
+            label="FIG.04 · JAPANESE ONI · UPPER ARM"
+            image="/works/hero-oni.png"
+            imageAlt="Japanese oni mask tattoo, black and grey with green color accent, on upper arm"
+            seed={1}
+          >
             <div style={{ position: "absolute", top: 14, right: 14, display: "flex", flexDirection: "column", gap: 6 }}>
               <SpecimenTag variant="bone" shape="square">SPECIMEN 04</SpecimenTag>
-              <SpecimenTag variant="blood" shape="square">3RL · IRON BLACK</SpecimenTag>
+              <SpecimenTag variant="blood" shape="square">ONI · BLACK &amp; GREY · COLOR</SpecimenTag>
             </div>
             <div style={{
               position: "absolute", bottom: 64, left: 14,
@@ -274,7 +280,110 @@ function HomeRoster() {
           {ARTISTS.map((a, i) => <RosterCard key={a.id} artist={a} seed={i} />)}
         </div>
       </div>
+      <HiringMarquee />
     </section>
+  );
+}
+
+function HiringMarquee() {
+  const [hover, setHover] = useState(false);
+  // 8 phrase blocks, rendered twice for seamless loop (-50% translation)
+  const phrases = Array.from({ length: 8 });
+
+  return (
+    <Link
+      href="/careers"
+      aria-label="Open careers — Tattoo Lab is hiring"
+      style={{ display: "block", textDecoration: "none", marginTop: 48 }}
+    >
+      <div
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        className="tl-marquee"
+        style={{
+          position: "relative",
+          background: hover ? "var(--tl-bone-50)" : "var(--tl-accent)",
+          color: "var(--tl-ink-900)",
+          borderTop: "1px solid var(--tl-ink-900)",
+          borderBottom: "1px solid var(--tl-ink-900)",
+          padding: "28px 0",
+          cursor: "pointer",
+          transition: "background 200ms ease",
+        }}
+      >
+        {/* corner crosshairs to echo the lab/specimen frame language */}
+        <span aria-hidden style={{ position: "absolute", top: 6, left: 8, fontFamily: "var(--tl-font-mono)", fontSize: 12, opacity: 0.55 }}>+</span>
+        <span aria-hidden style={{ position: "absolute", top: 6, right: 8, fontFamily: "var(--tl-font-mono)", fontSize: 12, opacity: 0.55 }}>+</span>
+        <span aria-hidden style={{ position: "absolute", bottom: 6, left: 8, fontFamily: "var(--tl-font-mono)", fontSize: 12, opacity: 0.55 }}>+</span>
+        <span aria-hidden style={{ position: "absolute", bottom: 6, right: 8, fontFamily: "var(--tl-font-mono)", fontSize: 12, opacity: 0.55 }}>+</span>
+
+        <div className="tl-marquee-track">
+          {[0, 1].map((copy) => (
+            <div
+              key={copy}
+              aria-hidden={copy === 1}
+              style={{ display: "inline-flex", alignItems: "center" }}
+            >
+              {phrases.map((_, i) => (
+                <span
+                  key={i}
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 28,
+                    paddingRight: 28,
+                    fontFamily: "var(--tl-font-display)",
+                    fontWeight: 800,
+                    fontSize: "clamp(48px, 7vw, 96px)",
+                    lineHeight: 1,
+                    letterSpacing: "-0.02em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span>HIRING</span>
+                  <span style={{ fontFamily: "var(--tl-font-mono)", fontSize: 22, opacity: 0.7, transform: "translateY(-4px)" }}>+</span>
+                  <span>JOIN THE TEAM</span>
+                  <span style={{ fontFamily: "var(--tl-font-mono)", fontSize: 22, opacity: 0.7, transform: "translateY(-4px)" }}>+</span>
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
+
+        {/* LEARN MORE pill, matched to the OPEN FILE stationery button */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 12,
+            right: 12,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
+            fontFamily: "var(--tl-font-mono)",
+            fontSize: 10,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: hover ? "var(--tl-accent)" : "var(--tl-bone-50)",
+            background: "var(--tl-ink-900)",
+            padding: "4px 9px",
+            border: "1px solid var(--tl-ink-900)",
+            transition: "color 160ms",
+            animation: hover ? "none" : "tl-pulse 1.8s ease-in-out infinite",
+          }}
+        >
+          LEARN MORE
+          <span
+            style={{
+              display: "inline-block",
+              transform: hover ? "translateX(3px)" : "translateX(0)",
+              transition: "transform 220ms cubic-bezier(0.16,1,0.3,1)",
+            }}
+          >
+            →
+          </span>
+        </div>
+      </div>
+    </Link>
   );
 }
 
